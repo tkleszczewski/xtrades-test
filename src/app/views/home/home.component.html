@@ -1,1 +1,26 @@
-<h1>Home</h1>
+<div class="home-container">
+  <h1 class="home-heading">Competitions</h1>
+  <section class="home-section">
+    <header class="home-section-header">
+      <div class="home-section-header-upper">
+        <div class="users-group">
+          <img
+            *ngFor="let image of images; let i = index"
+            class="user-image"
+            [ngStyle]="{ right: (6 * i).toString() + 'px' }"
+            [src]="image.src"
+            [alt]="image.alt"
+          />
+          <span
+            class="users-count"
+            [ngStyle]="{ right: (6 * images.length - 3).toString() + 'px' }"
+            >18</span
+          >
+        </div>
+        <p class="users-message">Too late to join</p>
+      </div>
+      <h2 class="home-section-header-heading">Weekly Challenges</h2>
+    </header>
+  </section>
+  <section class="home-section"></section>
+</div>
