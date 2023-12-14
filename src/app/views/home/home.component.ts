@@ -6,6 +6,17 @@ interface Image {
   alt: string;
 }
 
+interface WeeklyChallengeCard {
+  place: number;
+  avatarUrl: string;
+  userFullName: string;
+  alerts: number;
+  winRate: number;
+  yield: number;
+  balanceCash: number;
+  balancePercentage: number;
+}
+
 @Component({
   selector: 'app-home',
   styleUrl: 'home.component.scss',
@@ -28,6 +39,41 @@ class HomeComponent {
       alt: 'user-3',
     },
   ];
+
+  weeklyChallengeCards: WeeklyChallengeCard[] = [
+    {
+      place: 1,
+      avatarUrl: '../../../assets/avatar-first.png',
+      userFullName: 'Roger Korsgaard',
+      alerts: 20,
+      winRate: 85,
+      yield: 11,
+      balanceCash: 7500,
+      balancePercentage: 45,
+    },
+    {
+      place: 2,
+      avatarUrl: '../../../assets/avatar-second.png',
+      userFullName: 'Charlie Herwitz',
+      alerts: 20,
+      winRate: 85,
+      yield: 11,
+      balanceCash: 1430,
+      balancePercentage: 25,
+    },
+    {
+      place: 3,
+      avatarUrl: '../../../assets/avatar-third.png',
+      userFullName: 'Ahmad Mango',
+      alerts: 20,
+      winRate: 85,
+      yield: 11,
+      balanceCash: -1500,
+      balancePercentage: 10,
+    },
+  ];
+
+  places = ['st', 'nd', 'rd'];
 }
 
 export { HomeComponent };
