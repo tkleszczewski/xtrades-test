@@ -1,0 +1,55 @@
+.user {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  background-image: url("../../../../assets/avatar-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-name {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-name {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+
+  &-decoration {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+  }
+}
+
+.x-trades-logo {
+  margin-right: 6px;
+}
+
+.crown-icon {
+  margin-left: 10px;
+  margin-right: 6px;
+}
