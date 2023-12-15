@@ -1,0 +1,27 @@
+<header class="home-section-header">
+  <div class="home-section-header-upper">
+    <div class="users-group">
+      <img
+        *ngFor="let image of userImages; let i = index"
+        class="user-image"
+        [ngStyle]="{ right: (6 * i).toString() + 'px' }"
+        [src]="image.src"
+        [alt]="image.alt"
+      />
+      <span
+        class="users-count"
+        [ngStyle]="{ right: (6 * userImages.length - 3).toString() + 'px' }"
+        >18</span
+      >
+    </div>
+    <p class="users-message" *ngIf="dateOfExpiration <= nowDate">
+      Too late to join
+    </p>
+  </div>
+  <h2
+    class="home-section-header-heading"
+    [ngClass]="{ 'heading-active': dateOfExpiration > nowDate }"
+  >
+    {{ heading }}
+  </h2>
+</header>

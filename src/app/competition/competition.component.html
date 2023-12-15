@@ -1,31 +1,11 @@
 <section class="home-section">
-  <header class="home-section-header">
-    <div class="home-section-header-upper">
-      <div class="users-group">
-        <img
-          *ngFor="let image of userImages; let i = index"
-          class="user-image"
-          [ngStyle]="{ right: (6 * i).toString() + 'px' }"
-          [src]="image.src"
-          [alt]="image.alt"
-        />
-        <span
-          class="users-count"
-          [ngStyle]="{ right: (6 * userImages.length - 3).toString() + 'px' }"
-          >18</span
-        >
-      </div>
-      <p class="users-message" *ngIf="dateOfExpiration <= nowDate">
-        Too late to join
-      </p>
-    </div>
-    <h2
-      class="home-section-header-heading"
-      [ngClass]="{ 'heading-active': dateOfExpiration > nowDate }"
-    >
-      {{ heading }}
-    </h2>
-  </header>
+  <competition-header
+    [userImages]="userImages"
+    [dateOfExpiration]="dateOfExpiration"
+    [nowDate]="nowDate"
+    [heading]="heading"
+  >
+  </competition-header>
   <div class="cards-container">
     <competition-podium-card
       *ngFor="let podiumCard of podiumCards"
@@ -33,36 +13,11 @@
       [places]="places"
     ></competition-podium-card>
   </div>
-  <div class="user-section">
-    <div class="user-section-user-details">
-      <div class="user-details-avatar">
-        <img
-          src="../../../assets/user-details-avatar.png"
-          alt="user details avatar"
-        />
-      </div>
-      <div class="user-details-name-group">
-        <span class="name-group-name">Roger K</span>
-        <span class="name-group-nickname">&commat;rog13k</span>
-      </div>
-      <div class="user-details-bits-avatar">
-        <img src="../../../assets/xtrades-bits.svg" alt="bits icon" />
-      </div>
-      <div class="user-details-bits-group">
-        <span class="bits-group-count"> 2000 </span>
-        <span class="bits-group-prize">&commat;xBits prize</span>
-      </div>
-    </div>
-    <div class="user-section-event-info" *ngIf="dateOfExpiration < nowDate">
-      <div class="event-info-days-count">
-        {{ dateOfExpiration | daysAfter }}
-      </div>
-      <div class="event-info-days-label">
-        <span class="days-label-days">Days</span>
-        <span class="days-label-past">past</span>
-      </div>
-    </div>
-  </div>
+  <competition-user-section
+    [dateOfExpiration]="dateOfExpiration"
+    [nowDate]="nowDate"
+  >
+  </competition-user-section>
   <div class="button-container">
     <button
       class="view-button"

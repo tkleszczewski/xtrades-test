@@ -3,14 +3,23 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IPodiumCard, Image } from '../views/home/home.service';
 import { DaysAfterPipe } from '../pipes/days-after.pipe';
 import { BalancePipe } from '../pipes/balance.pipe';
-import { CompetitionPodiumCard } from './podium-card/podium-card.component';
+import { CompetitionPodiumCardComponent } from './podium-card/podium-card.component';
+import { CompetitionHeaderComponent } from './header/competition-header.component';
+import { CompetitionUserSectionComponent } from './user-section/competition-user-section.component';
 
 @Component({
   selector: 'app-competition',
   standalone: true,
   styleUrl: 'competition.component.scss',
   templateUrl: 'competition.component.html',
-  imports: [CommonModule, DaysAfterPipe, BalancePipe, CompetitionPodiumCard],
+  imports: [
+    CommonModule,
+    DaysAfterPipe,
+    BalancePipe,
+    CompetitionHeaderComponent,
+    CompetitionPodiumCardComponent,
+    CompetitionUserSectionComponent,
+  ],
 })
 class CompetitionComponent implements OnInit {
   @Input()

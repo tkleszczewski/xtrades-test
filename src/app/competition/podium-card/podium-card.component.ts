@@ -10,7 +10,7 @@ import { BalancePipe } from '../../pipes/balance.pipe';
   standalone: true,
   imports: [CommonModule, BalancePipe],
 })
-class CompetitionPodiumCard {
+class CompetitionPodiumCardComponent {
   @Input()
   podiumCard: IPodiumCard = {
     alerts: 0,
@@ -28,4 +28,4 @@ class CompetitionPodiumCard {
   places: string[] = [];
 }
 
-export { CompetitionPodiumCard };
+export { CompetitionPodiumCardComponent };
