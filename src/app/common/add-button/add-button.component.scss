@@ -1,0 +1,20 @@
+.add-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  right: calc(15px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(8, 122, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(114, 234, 181, 1) 0%,
+    rgba(8, 122, 255, 1) 100%
+  );
+  cursor: pointer;
+}

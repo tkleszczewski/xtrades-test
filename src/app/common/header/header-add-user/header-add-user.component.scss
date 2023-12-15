@@ -1,0 +1,34 @@
+.add-user-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.add-user-button-icon {
+  stroke: white;
+}
+
+.add-user-button-icon-clicked {
+  animation-name: clicked;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes clicked {
+  0% {
+    stroke: var(--color-black);
+    transform: scale(1.2);
+  }
+
+  50% {
+    stroke: #88ffc7;
+    transform: scale(1.5);
+  }
+
+  100% {
+    stroke: var(--color-white);
+    transform: scale(1);
+  }
+}

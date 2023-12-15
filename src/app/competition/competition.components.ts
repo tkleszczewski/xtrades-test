@@ -29,11 +29,18 @@ class CompetitionComponent implements OnInit {
 
   nowDate: number = Date.now();
 
+  viewButtonClicked: boolean = false;
+
   ngOnInit() {
     this.nowDate = Date.now();
   }
 
-  daysAfter() {}
+  handleViewButtonClick() {
+    this.viewButtonClicked = true;
+    setTimeout(() => {
+      this.viewButtonClicked = false;
+    }, 800);
+  }
 }
 
 export { CompetitionComponent };

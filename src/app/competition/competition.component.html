@@ -145,6 +145,13 @@
     </div>
   </div>
   <div class="button-container">
-    <button class="view-button">view</button>
+    <button
+      class="view-button"
+      [ngClass]="{ 'view-button-clicked': viewButtonClicked }"
+      (click)="handleViewButtonClick()"
+    >
+      view
+      <span *ngIf="viewButtonClicked" class="view-button-ripple"></span>
+    </button>
   </div>
 </section>
