@@ -1,3 +1,8 @@
-<button class="add-button">
+<button
+  (click)="handleAddButtonClick()"
+  class="add-button"
+  [ngClass]="{ 'add-button-clicked': addButtonClicked }"
+>
   <ng-icon name="octPlus" size="25" color="#fff"></ng-icon>
+  <div *ngIf="addButtonClicked" class="ripple-container"></div>
 </button>
