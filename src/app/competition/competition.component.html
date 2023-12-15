@@ -27,92 +27,11 @@
     </h2>
   </header>
   <div class="cards-container">
-    <div class="user-card" *ngFor="let podiumCard of podiumCards">
-      <div
-        class="user-card-avatar-section"
-        [ngClass]="{
-          'blur-first': podiumCard.place === 1,
-          'blur-second': podiumCard.place === 2,
-          'blur-third': podiumCard.place === 3
-        }"
-      >
-        <span class="user-card-avatar-place"
-          >{{ podiumCard.place
-          }}<sup class="avatar-place-sup">{{
-            places[podiumCard.place - 1]
-          }}</sup></span
-        >
-        <div
-          class="avatar-image"
-          [ngStyle]="{
-            'background-image': 'url(' + podiumCard.avatarUrl + ')'
-          }"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="50"
-            height="43"
-            viewBox="0 0 50 43"
-            fill="none"
-          >
-            <path
-              d="M33.5598 1C35.6906 1 37.6615 2.13005 38.7379 3.96892L47.2257 18.4689C48.3216 20.3411 48.3216 22.6589 47.2257 24.5311L38.7379 39.0311C37.6615 40.87 35.6906 42 33.5598 42H16.4402C14.3094 42 12.3385 40.8699 11.2621 39.0311L2.77429 24.5311C1.6784 22.6589 1.6784 20.3411 2.77429 18.4689L11.2621 3.96892C12.3385 2.13005 14.3094 1 16.4402 1L33.5598 1Z"
-              fill="url(#pattern0)"
-            />
-            <path
-              d="M39.1694 3.71634C38.0033 1.72422 35.8681 0.5 33.5598 0.5L16.4402 0.5C14.1319 0.5 11.9967 1.72422 10.8306 3.71633L2.34278 18.2163C1.15557 20.2445 1.15557 22.7555 2.34278 24.7837L10.8306 39.2837C11.9967 41.2758 14.1319 42.5 16.4402 42.5H33.5598C35.8681 42.5 38.0033 41.2758 39.1694 39.2837L47.6572 24.7837C48.8444 22.7555 48.8444 20.2445 47.6572 18.2163L39.1694 3.71634Z"
-              stroke="white"
-              stroke-opacity="0.2"
-            />
-          </svg>
-        </div>
-      </div>
-      <div
-        class="details-section"
-        [ngClass]="{
-          'balance-positive': podiumCard.balanceCash >= 0,
-          'balance-negative': podiumCard.balanceCash < 0
-        }"
-      >
-        <div class="details-section-upper">
-          <p class="user-card-name">{{ podiumCard.userFullName }}</p>
-          <span *ngIf="podiumCard.isUserVerified" class="user-card-is-verified">
-            <img src="../../../assets/is-verified.svg" alt="is verified icon" />
-          </span>
-        </div>
-        <div class="details-section-lower">
-          <div class="statistics-container">
-            <div class="statistics-alert">
-              <span class="statistics-value">20</span>
-              <span class="statistics-label">Alerts</span>
-            </div>
-            <div class="statistics-win-rate">
-              <span class="statistics-value">85%</span>
-              <span class="statistics-label">Win rate</span>
-            </div>
-            <div class="statistics-yield">
-              <span class="statistics-value">11%</span>
-              <span class="statistics-label">Yield</span>
-            </div>
-          </div>
-          <div
-            class="balance"
-            [ngClass]="{
-              'balance-summary-positive': podiumCard.balanceCash >= 0,
-              'balance-summary-negative': podiumCard.balanceCash < 0
-            }"
-          >
-            <span class="balance-cash">{{
-              podiumCard.balanceCash | currency | balance
-            }}</span>
-            <span class="balance-percentage">{{
-              podiumCard.balancePercentage | percent
-            }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <competition-podium-card
+      *ngFor="let podiumCard of podiumCards"
+      [podiumCard]="podiumCard"
+      [places]="places"
+    ></competition-podium-card>
   </div>
   <div class="user-section">
     <div class="user-section-user-details">
