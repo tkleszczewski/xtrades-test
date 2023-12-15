@@ -49,7 +49,7 @@ class CompetitionComponent implements OnInit {
     this.viewButtonClicked = true;
     setTimeout(() => {
       this.viewButtonClicked = false;
-    }, 800);
+    }, 500);
   }
 }
 

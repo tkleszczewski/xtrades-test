@@ -26,154 +26,11 @@
   }
 }
 
-.heading-active {
-  color: var(--color-white);
-}
-
-.user-image {
-  position: relative;
-}
-
-.users-group {
-  display: flex;
-  align-items: center;
-}
-
-.users-message {
-  font-size: 10px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: var(--color-white-50);
-}
-
-.users-count {
-  position: relative;
-  height: 16px;
-  width: 16px;
-  color: var(--color-white);
-  font-size: 8px;
-  line-height: 8px;
-  background-color: #2b2e30;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
 .cards-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 0px 16px;
-}
-
-.user-section {
-  margin-top: 20px;
-  margin-bottom: 25px;
-  padding: 0px 16px;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-
-  &-user-details {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
-  &-event-info {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.user-details {
-  &-avatar {
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-  }
-
-  &-name-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 10px;
-  }
-
-  &-bits-avatar {
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-  }
-
-  &-bits-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-.name-group {
-  &-name {
-    font-size: 10px;
-    font-weight: 500;
-  }
-
-  &-nickname {
-    color: var(--color-white-50);
-    font-size: 8px;
-    font-weight: 400;
-  }
-}
-
-.bits-group {
-  &-count {
-    font-size: 10px;
-    font-weight: 500;
-  }
-
-  &-prize {
-    font-size: 8px;
-    font-weight: 400;
-    color: var(--color-white-50);
-  }
-}
-
-.event-info {
-  &-days-count {
-    border: 1px solid #ff6f6f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    font-size: 12px;
-    color: #ff6f6f;
-    font-weight: 500;
-    background-color: #261516;
-    margin-right: 8px;
-  }
-
-  &-days-label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #ff6f6f;
-  }
-}
-
-.days-label {
-  &-days {
-    font-size: 10px;
-    font-weight: 500;
-  }
-
-  &-past {
-    font-size: 8px;
-    font-weight: 400;
-  }
 }
 
 .button-container {
@@ -216,7 +73,7 @@
   opacity: 0.05;
   background-color: var(--color-white);
   animation-name: ripple;
-  animation-duration: 700ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }

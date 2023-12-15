@@ -21,7 +21,7 @@
   cursor: pointer;
   transform: scale(1);
   transition-property: transform;
-  transition-duration: 800ms;
+  transition-duration: 500ms;
 
   &-clicked {
     transform: scale(1.15);
@@ -30,7 +30,7 @@
 
 .ripple-container {
   animation-name: ripple;
-  animation-duration: 800ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   position: absolute;

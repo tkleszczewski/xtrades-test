@@ -18,7 +18,7 @@ class AddButtonComponent {
     this.addButtonClicked = true;
     setTimeout(() => {
       this.addButtonClicked = false;
-    }, 700);
+    }, 500);
   }
 }
 
