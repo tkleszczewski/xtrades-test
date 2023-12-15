@@ -40,7 +40,7 @@ export class HomeService {
     dateOfExpiration: Date.now() - 2.5 * 24 * 60 * 60 * 1000,
     heading: 'Weekly Challenges',
     userDetails: {
-      avatarUrl: '',
+      avatarUrl: '../../../assets/user-details-avatar.png',
       userFullName: 'Roger Korsgaard',
       userNickname: 'rog13k',
       bitsPrize: 20000,
@@ -99,7 +99,7 @@ export class HomeService {
     dateOfExpiration: Date.now() + 2.5 * 24 * 60 * 60 * 1000,
     heading: 'Double Gain Week Contest',
     userDetails: {
-      avatarUrl: '',
+      avatarUrl: '../../../assets/user-details-avatar.png',
       userFullName: 'Roger Korsgaard',
       userNickname: 'rog13k',
       bitsPrize: 15000,
@@ -123,7 +123,7 @@ export class HomeService {
         place: 1,
         avatarUrl: '../../../assets/avatar-fourth.png',
         isUserVerified: true,
-        userFullName: 'Roger Korsgaard',
+        userFullName: 'Zain Mango',
         alerts: 20,
         winRate: 85,
         yield: 11,

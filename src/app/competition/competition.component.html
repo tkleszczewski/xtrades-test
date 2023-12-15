@@ -14,8 +14,10 @@
     ></competition-podium-card>
   </div>
   <competition-user-section
+    *ngIf="userDetails"
     [dateOfExpiration]="dateOfExpiration"
     [nowDate]="nowDate"
+    [userDetails]="userDetails"
   >
   </competition-user-section>
   <div class="button-container">

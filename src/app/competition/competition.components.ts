@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { IPodiumCard, Image } from '../views/home/home.service';
+import { IPodiumCard, IUserDetails, Image } from '../views/home/home.service';
 import { DaysAfterPipe } from '../pipes/days-after.pipe';
 import { BalancePipe } from '../pipes/balance.pipe';
 import { CompetitionPodiumCardComponent } from './podium-card/podium-card.component';
@@ -36,6 +36,9 @@ class CompetitionComponent implements OnInit {
 
   @Input()
   dateOfExpiration: number = Date.now();
+
+  @Input()
+  userDetails: IUserDetails | null = null;
 
   nowDate: number = Date.now();
 
