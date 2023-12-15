@@ -1,79 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
-interface Image {
-  src: string;
-  alt: string;
-}
-
-interface WeeklyChallengeCard {
-  place: number;
-  avatarUrl: string;
-  userFullName: string;
-  alerts: number;
-  winRate: number;
-  yield: number;
-  balanceCash: number;
-  balancePercentage: number;
-}
+import { Component, OnInit } from '@angular/core';
+import { HomeService, ICompetition } from './home.service';
+import { CompetitionComponent } from '../../competition/competition.components';
 
 @Component({
   selector: 'app-home',
   styleUrl: 'home.component.scss',
   templateUrl: 'home.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CompetitionComponent],
 })
-class HomeComponent {
-  images: Image[] = [
-    {
-      src: '../../../assets/user-1.png',
-      alt: 'user-1',
-    },
-    {
-      src: '../../../assets/user-2.png',
-      alt: 'user-2',
-    },
-    {
-      src: '../../../assets/user-3.png',
-      alt: 'user-3',
-    },
-  ];
-
-  weeklyChallengeCards: WeeklyChallengeCard[] = [
-    {
-      place: 1,
-      avatarUrl: '../../../assets/avatar-first.png',
-      userFullName: 'Roger Korsgaard',
-      alerts: 20,
-      winRate: 85,
-      yield: 11,
-      balanceCash: 7500,
-      balancePercentage: 45,
-    },
-    {
-      place: 2,
-      avatarUrl: '../../../assets/avatar-second.png',
-      userFullName: 'Charlie Herwitz',
-      alerts: 20,
-      winRate: 85,
-      yield: 11,
-      balanceCash: 1430,
-      balancePercentage: 25,
-    },
-    {
-      place: 3,
-      avatarUrl: '../../../assets/avatar-third.png',
-      userFullName: 'Ahmad Mango',
-      alerts: 20,
-      winRate: 85,
-      yield: 11,
-      balanceCash: -1500,
-      balancePercentage: 10,
-    },
-  ];
-
+class HomeComponent implements OnInit {
+  competitions: ICompetition[] = [];
   places = ['st', 'nd', 'rd'];
+
+  constructor(private homeService: HomeService) {}
+
+  ngOnInit(): void {
+    this.competitions = this.homeService.competitions;
+  }
 }
 
 export { HomeComponent };
